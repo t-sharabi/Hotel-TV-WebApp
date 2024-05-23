@@ -1,13 +1,12 @@
 // src/components/SpaAndGym.js
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Grid, Button } from '@mui/material';
 
 function SpaAndGym() {
   return (
     <Box
       sx={{
         p: 4,
-        textAlign: 'center',
         minHeight: '100vh',
         backgroundImage: 'url(/landing-page.jpg)', // Ensure the image is in the public folder
         backgroundSize: 'cover',
@@ -18,9 +17,65 @@ function SpaAndGym() {
       <Typography variant="h4" gutterBottom>
         Spa and Gym
       </Typography>
-      <Typography variant="body1" gutterBottom>
-        Enjoy our state-of-the-art spa and gym facilities to relax and rejuvenate during your stay.
-      </Typography>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}
+      >
+        <Grid container spacing={4} justifyContent="center">
+          <Grid item>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
+              <Box
+                component="img"
+                src="/spa-image.png" // Replace with the actual path to the Spa image
+                alt="Spa"
+                sx={{ width: '600px', height: 'auto' }}
+              />
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{ mt: 2, width: '200px' }}
+                onClick={() => console.log('Book Spa')}
+              >
+                Book Your Time
+              </Button>
+            </Box>
+          </Grid>
+          <Grid item>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
+              <Box
+                component="img"
+                src="/gym-image.jpg" // Replace with the actual path to the Gym image
+                alt="Gym"
+                sx={{ width: '500px', height: 'auto' }}
+              />
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{ mt: 2, width: '200px' }}
+                onClick={() => console.log('Book Gym')}
+              >
+                Book Your Time
+              </Button>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
     </Box>
   );
 }
